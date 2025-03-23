@@ -22,6 +22,8 @@ This project can be run using gradle:
 The application will be started on http://localhost:8080, move to http://localhost:8080/consultation/questions
 to see the list of questions.
 
+Postman collection was added to the postman directory allowing access to all endpoints.
+
 Limitations
 
 - Not persistent storage (was not required) - data will be lost when app restarts
