@@ -1,0 +1,35 @@
+MedExpress – Consultation API
+
+This project is a basic Consultation MVP for the MedExpress service in Genovia.
+It allows customers to answer a predefined set of health-related questions and determines whether they are likely
+eligible to receive medication.
+
+Tech Stack
+
+- Java 17
+- Spring Boot
+- Spring Web
+- Lombok
+- Jakarta Bean Validation
+- Postman for testing
+
+Instructions
+
+This project can be run using gradle:
+- Linux/macOS: ./gradlew bootRun
+- Windows: gradlew bootRun
+
+The application will be started on http://localhost:8080, move to http://localhost:8080/consultation/questions
+to see the list of questions.
+
+Limitations
+
+- Not persistent storage (was not required) - data will be lost when app restarts
+- Not thread-safe - using HashMap to store the questions and the answers
+    - could lead to race conditions if two or more users access the resource at the same time
+- Basic eligibility logic - if answer is yes then user is not eligible
+    - currently it is a template, can be improved if clearer requirements are provided
+- Question id is not validated when saving answers
+    - it is assumed by the developer that customers are answering to existent questions
+- Validation errors are not returned in the response because GlobalExceptionHandler was not added
+- No unit tests or integration tests were created
