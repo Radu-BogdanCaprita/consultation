@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "9d98a8e0-ed08-4e22-b98b-7b005fe6aab6",
+		"name": "medexpress.consultation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41539637"
+	},
+	"item": [
+		{
+			"name": "question",
+			"item": [
+				{
+					"name": "all-questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/consultation/questions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consultation",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"text\": \"Are you lactose intolerant?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/consultation/questions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consultation",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "answer",
+			"item": [
+				{
+					"name": "all-answers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/consultation/answers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consultation",
+								"answers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-answer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"questionId\": 1,\r\n        \"text\": \"yes\"\r\n    },\r\n    {\r\n        \"questionId\": 2,\r\n        \"text\": \"no\"\r\n    },\r\n    {\r\n        \"questionId\": 3,\r\n        \"text\": \"no\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/consultation/answers/{{customerId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consultation",
+								"answers",
+								"{{customerId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "answers-by-customer-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/consultation/answers/{:customerId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consultation",
+								"answers",
+								"{:customerId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "eligibility",
+			"item": [
+				{
+					"name": "eligibility-by-customer-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/consultation/eligibility/{{customerId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consultation",
+								"eligibility",
+								"{{customerId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
