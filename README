@@ -24,6 +24,14 @@ to see the list of questions.
 
 Postman collection was added to the postman directory allowing access to all endpoints.
 
+Endpoints
+
+- GET /questions — retrieve a list of medical questions for the consultation process
+- POST /answers/{customerId} — submit answers to consultation questions
+- GET /answers — return all answers in the system
+- GET /answers/{customerId} — return all answers submitted by a specific customer
+- GET /eligibility/{customerId} — returns whether a customer is likely eligible for medication
+
 Limitations
 
 - Not persistent storage (was not required) - data will be lost when app restarts
